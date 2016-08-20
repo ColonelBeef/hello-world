@@ -108,12 +108,12 @@ public class Game extends JPanel implements Runnable {
 		g.dispose();
 	}
 
-	public void start() {
+	public synchronized void start() {
 		new Thread(this, "Game").start();
 		isRunning = true;
 	}
 
-	public void stop() {
+	public synchronized void stop() {
 		isRunning = false;
 	}
 
